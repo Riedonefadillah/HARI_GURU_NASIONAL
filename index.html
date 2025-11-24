@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCAPAN HARI GURU NASIONAL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Berkshire+Swash&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Comic Neue', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6ea 100%);
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+  background-size: 200% 300%;
+  animation: floating 10s ease infinite;
+}
+
+/* ===== Judul dan Paragraf ===== */
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #333;
+  animation: fadeIn 2s ease-in-out;
+}
+
+p {
+  max-width: 600px;
+  color: #444;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* ===== Gambar kecil ===== */
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gallery img {
+  width: 500px;
+  height: 250px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 5px solid #fff;
+  animation: fadeIn 2s ease-in-out;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Popup Gambar Besar ===== */
+.popup-foto {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Gambar besar */
+.popup-foto img {
+  max-width: 85%;
+  max-height: 80%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  animation: zoomIn 0.4s ease;
+}
+
+/* Tombol close */
+.popup-foto span {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.foto-container {
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.foto-container img {
+    width: 400px;
+    height: 500px;
+    font-size:cover;
+  animation: zoomIn 0.4s ease;
+}
+.popup-foto span:hover {
+  color: #ff7675;
+}
+
+/* Tombol slide kiri-kanan */
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+.prev {
+  left: -80px;
+}
+.next {
+  right:80px;
+}
+
+
+/* ===== Popup Ucapan ===== */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.popup.active {
+  display: block;
+}
+
+.popup h2 {
+  margin-bottom: 15px;
+  color: #ff7eb3;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  background-color: #93CAED;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #74b9ff;
+  transform: scale(1.1);
+}
+
+/* ===== Animasi ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floating {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ===== Responsif ===== */
+@media (max-width: 1024px) {
+  h1 { font-size: 2rem; }
+  p { font-size: 1.1rem; max-width: 500px; }
+  .gallery img { width: 400px; height: 220px; }
+  .prev { left: 25px; }
+  .next { right: 25px; }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 1.8rem; }
+  p { font-size: 1rem; max-width: 90%; }
+  .gallery img { width: 320px; height: 180px; }
+  .prev, .next { font-size: 30px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  p { font-size: 0.95rem; }
+  .gallery img { width: 260px; height: 150px; }
+  button { font-size: 0.9rem; padding: 8px 18px; }
+  .prev, .next { font-size: 28px; padding: 8px; }
+}
+
+</style>
+<body>
+    <audio autoplay loop>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+    <h1>SELAMAT HARI GURU NASIONAL</h1>
+     
+    <div class="gallery">
+        <img src="img.jpg" alt="Foto Guru" id="fotoKecil">
+    </div>
+   
+
+    <div class="popup-foto" id="popupFoto">
+    <span id="closeFoto">&times;</span>
+
+    <div class="foto-container">
+
+    <span class="prev" id="prevFoto">&#10094;</span>
+    <img id="fotoBesar" src="img.jpg" alt="Foto Besar">
+    <span class="next" id="nextFoto">&#10095;</span>
+
+  </div>
+  </div>
+
+    <p>Terima kasih atas setiap ilmu dan kasih sayang yang Ibu tanamkan.  
+    Dari Ibu, kami belajar bukan hanya pelajaran, tapi juga arti ketulusan dan kesabaran.  
+    Doa kami selalu untuk Ibu — semoga sehat, bahagia, dan terus menginspirasi kami semua 💖
+    </p>
+    <button id="showMessage">klik</button>
+    <div class="popup" id="popup">
+        <h2>Terima Kasih , Guruku Sayang! &#128151;</h2>
+        <p> Setiap langkah kami akan selalu mengingat jasamu.  
+        Engkau bukan hanya guru, tapi juga pelita dalam perjalanan hidup kami.</p>
+        <button id="closePopup">Tutup</button>
+    </div>
+   
+  
+    <script src="script.js"></script>
+</body>
+</html>
